@@ -1,3 +1,5 @@
+
+//jquery ready function
 $(function () {
 
   // You can modularize your code into smaller functions by defining the
