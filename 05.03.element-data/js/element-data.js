@@ -5,6 +5,8 @@ $(function () {
   // Here, we'll attach data about all available images to the gallery itself.
 
   // Select the <img> inside the gallery to manipulate it later
+
+  //store gallery in a variable so that jquery would not need to always look into the DOM each time you gonna use the element
   var gallery = $(".gallery");
 
   // Initialize an array of all images for the gallery
@@ -20,20 +22,22 @@ $(function () {
   // To retrieve the data, again use just one argument: the key.
   console.log(gallery.data("availableImages"));  // Array[...]
 
-  gallery.data("name", "The Amazing Gallery");
+  //like attribute, prop... 2 parameter to set the value and 1 parameter to retrieve the value
+    gallery.data("name", "The Amazing Gallery");
   console.log(gallery.data("name"));  // The Amazing Gallery
 
-  // Remove data just as easily using removeData().
+  //no prameter will return the data associated to the gallery)
+  console.log(gallery.data());
   gallery.removeData("name");
-  console.log(gallery.data("name"));  // undefined
+  console.log(gallery.data("name"));  // The Amazing Gallery
 
-  // If you attach data directly in HTML via an attribute prefixed with "data-",
-  // you can read that automatically from jQuery.
-  var data = $("p:first").data("mydata");
-  console.log(data);  // Data coming from HTML attribute
-
-
-  //html 5
+    //html 5
   //data- prefix
+    var firstPar = $("p:first");
+  console.log(firstPar.data("mydata"));  // Data coming from HTML attribute
+
+  //USAGE - store anything you want strings numbers,, use data function
+
+
 
 });
